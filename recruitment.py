@@ -53,7 +53,7 @@ def get_user_cv(skillsinput):
     cv= {"name":name,
     "age":age,
     "experience": experience,
-    "skills": skillsinput }
+    "skills": get_user_skills(get_skills()) }
     return cv
     #print (cv)
     
@@ -65,16 +65,23 @@ def check_acceptance(cv, desired_skill):
         for skill in cv["skills"]:
             if skill == desired_skill:
                 cv=True
+                break
             else:
                 cv= False
-    
+    return (cv)
 #check_acceptance(get_user_cv(get_user_skills(get_skills())),"python")
 
 def main():
     print("Welcome to the special recruitment program")
+    print (show_skills(get_skills()))
     skills=get_skills()
-    
-
+    cv= get_user_cv
+    check_acceptance(get_user_cv(get_user_skills(skills)), "python")
+    if cv== True:
+        print ("you have been accepted")
+    else:
+        print ("you werent accepted ")
+    return check_acceptance
     # Write your main logic here by combining the functions above into the
     # desired outcome
     
