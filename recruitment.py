@@ -13,8 +13,11 @@ def get_skills ():
 # It takes the list of skills as an argument and prints them numbered
 # This function doesn't return anything
 def show_skills(skills):
-    y= enumerate(skills)
-    print (list(y))
+    index=1
+    print ("skills:")
+    for skill in skills:
+        print (index,skill)
+        index= index+1
 
 #show_skills(get_skills ())
 
@@ -73,7 +76,7 @@ def check_acceptance(cv, desired_skill):
 
 def main():
     print("Welcome to the special recruitment program")
-    print (show_skills(get_skills()))
+    show_skills(get_skills())
     skills=get_skills()
     cv= get_user_cv
     check_acceptance(get_user_cv(get_user_skills(skills)), "python")
